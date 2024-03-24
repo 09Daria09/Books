@@ -1,0 +1,18 @@
+<div class="books-container">
+    <div class="books-list">
+      <ul>
+        <li *ngFor="let book of books" (click)="onSelect(book)">
+          {{ book.title }} - {{ book.author }}
+        </li>
+      </ul>
+    </div>
+    <div class="book-details" *ngIf="selectedBook">
+      <img *ngIf="selectedBook.cover" [src]="selectedBook.cover" alt="Обложка книги">
+      <h3>{{ selectedBook.title }}</h3>
+      <p>Автор: {{ selectedBook.author }}</p>
+      <p>Год издания: {{ selectedBook.year }}</p>
+      <p>Стоимость: {{ selectedBook.cost }}</p>
+      <p>Рейтинг: {{ selectedBook.rating }}</p>
+    </div>
+  </div>
+  
